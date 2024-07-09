@@ -18,7 +18,9 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASSWORD,  // Your email password or app-specific password
   },
 });
-
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+})
 app.post('/api/referrals', async (req, res) => {
   const { referrerName, referrerEmail, refereeName, refereeEmail, course, message } = req.body;
 
